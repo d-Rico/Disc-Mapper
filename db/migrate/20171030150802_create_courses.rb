@@ -10,7 +10,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
       t.string :difficulty, null: false
       t.boolean :water_hazard, null: false
       t.string :photo_url, null: false
-      t_belongs_to :user, null: false
+      t.belongs_to :user, null: false
 
       t.timestamps null: false
     end
