@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.header-bar {
+  background-color: rgb(230, 230, 235);
+}
+
+.home-top {
+  background-color: rgb(60, 170, 170);
+  padding: 30px;
+}
+
+.home-bottom {
+  size: cover;
+  /*background-image: url('disc_golf_img_1.jpg');*/
+  background-color: rgb(255, 200, 200);
+  background-size: cover;
+}
