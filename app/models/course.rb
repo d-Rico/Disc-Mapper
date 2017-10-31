@@ -1,4 +1,4 @@
-class Park < ApplicationRecord
+class Course < ApplicationRecord
   has_many :reviews
   has_many :events
   belongs_to :user
@@ -8,7 +8,6 @@ class Park < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
-  validates :category, presence: true
   validates :description, presence: true
   validates :difficulty, presence: true
   validates :water_hazard, presence: true
