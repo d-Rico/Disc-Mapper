@@ -10,18 +10,11 @@ class Course < ApplicationRecord
   validates :zip, presence: true
   validates :description, presence: true
   validates :difficulty, presence: true
-  validates :water_hazard, presence: true
   validates :photo_url, presence: true
 
   def self.search(search)
     where("name ILIKE ? OR address ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zip ILIKE ? OR category ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%, %#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   end
-
-  DIFFICULTY_LEVELS = [
-    "Novice",
-    "Intermediate",
-    "Expert"
-  ]
 
   STATES = [
     ["AK", "Alaska"],

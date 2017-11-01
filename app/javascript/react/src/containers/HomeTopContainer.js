@@ -17,7 +17,10 @@ class HomeTopContainer extends Component {
   render() {
     return(
       <div className="home-top">
-        Hello from Home Top Container
+        <ul className="home-top-ul">Upcoming Events</ul>
+        <ul className="home-top-ul">Pair ups</ul>
+        <ul className="home-top-ul">Resources</ul>
+        <ul className="home-top-ul">About Disc Mapper</ul>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import HomeContainer from '../containers/HomeContainer'
+import CourseShowContainer from '../containers/CourseShowContainer'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -11,6 +12,8 @@ const Main = props => {
   return(
     <Switch>
       <Route exact path="/" component={HomeContainer} />
+      <Route exact path="/courses" component={HomeContainer} />
+      <Route exact path="/courses/:id" component={CourseShowContainer} />
     </Switch>
   )
 }
