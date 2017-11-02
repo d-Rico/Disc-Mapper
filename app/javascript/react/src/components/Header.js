@@ -8,7 +8,9 @@ const Header = () => (
     <nav>
       <Link to='/'>Disc Mapper</Link>
     </nav>
-    
+    <nav>
+      <Link to='/'>Sign Up</Link>
+    </nav>
   </header>
 )
 

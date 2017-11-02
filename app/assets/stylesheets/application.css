@@ -14,18 +14,86 @@
  *= require_self
  */
 
-.header-bar {
+/*general styling*/
+body {
+  margin: 0;
   background-color: rgb(230, 230, 235);
+}
+
+.top-bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.top-ul {
+  display: table-cell;
+  margin: 0;
 }
 
 .home-top {
   background-color: rgb(60, 170, 170);
-  padding: 30px;
+  padding: 16px;
+}
+
+.home-top-ul {
+  font-size: 20px;
+  display: table-cell;
+  margin: 0;
+  width: 160px;
+  text-align: center;
 }
 
 .home-bottom {
-  size: cover;
-  /*background-image: url('disc_golf_img_1.jpg');*/
+  text-align: center;
+  color: rgb(60, 200, 230);
+  font-weight: bold;
+  min-height: 800px;
+  background-image: url('disc2.jpg');
   background-color: rgb(255, 200, 200);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*These are on the home bottom container, listing the courses*/
+.course-section {
+  text-align: center;
+}
+
+.courses-list {
+  margin: auto;
+  overflow: scroll;
+  height: 400px;
+  width: 450px;
+  background-color: rgb(230, 230, 235);
+}
+
+.course-tile-ul {
+  display: table-cell;
+  margin: 0;
+}
+
+.thumbnail {
+  display: table-cell;
+  border: 0px;
+  height: 60px;
+  width: 60px;
+}
+
+.thumbnail-name {
+  display: table-cell;
+}
+
+.thumbnail-address {
+
+}
+
+/*This is for the user sign up form*/
+.field-list {
+
+}
+
+.play-radio {
+  text-align: center;
+  width: 100px;
+  display: table-cell;
 }
