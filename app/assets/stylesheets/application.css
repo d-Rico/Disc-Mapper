@@ -14,6 +14,7 @@
  *= require_self
  */
 
+/*general styling*/
 body {
   margin: 0;
   background-color: rgb(230, 230, 235);
@@ -53,6 +54,7 @@ body {
   background-repeat: no-repeat;
 }
 
+/*These are on the home bottom container, listing the courses*/
 .course-section {
   text-align: center;
 }
@@ -71,12 +73,21 @@ body {
 }
 
 .thumbnail {
+  display: table-cell;
+  border: 0px;
   height: 60px;
   width: 60px;
 }
 
+.thumbnail-name {
+  display: table-cell;
+}
 
+.thumbnail-address {
 
+}
+
+/*This is for the user sign up form*/
 .field-list {
 
 }

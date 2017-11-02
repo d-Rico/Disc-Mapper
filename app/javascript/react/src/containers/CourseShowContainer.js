@@ -10,6 +10,17 @@ class CourseShowContainer extends Component {
     }
   }
 
+  getCourses() {
+    fetch('api/v1/courses', {
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin'
+    })
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ courses: json });
+      });
+  }
+
   render() {
 
     return(
@@ -17,6 +28,9 @@ class CourseShowContainer extends Component {
       <Link to={'/'}>Return Home</Link>
         <div>
           hello from course show page
+        </div>
+        <div>
+          This is where the reviews go
         </div>
       </div>
     )
