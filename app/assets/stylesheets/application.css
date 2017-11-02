@@ -87,6 +87,14 @@ body {
 
 }
 
+/*This is for the course show page*/
+.course-show-page {
+  background-color: rgb(200, 220, 200);
+}
+
+
+
+
 /*This is for the user sign up form*/
 .field-list {
 
