@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import HomeContainer from '../containers/HomeContainer'
 import HomeTopContainer from '../containers/HomeTopContainer'
 import CourseShowContainer from '../containers/CourseShowContainer'
+import AboutDiscMapper from '../components/AboutDiscMapper'
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -16,7 +17,7 @@ const Main = props => {
       <Route exact path="/upcoming-events" component={HomeTopContainer} />
       <Route exact path="/pair-ups" component={HomeTopContainer} />
       <Route exact path="/resources" component={HomeTopContainer} />
-      <Route exact path="/about-disc-mapper" component={HomeTopContainer} />
+      <Route exact path="/about-disc-mapper" component={AboutDiscMapper} />
       <Route exact path="/courses" component={HomeContainer} />
       <Route exact path="/courses/:id" component={CourseShowContainer} />
 
