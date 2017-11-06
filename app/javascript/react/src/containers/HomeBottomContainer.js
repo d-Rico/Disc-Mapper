@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import CourseTile from '../components/CourseTile'
+import CourseFormContainer from './CourseFormContainer'
 import SearchBar from './SearchBar'
 
 class HomeBottomContainer extends Component {
@@ -8,9 +9,11 @@ class HomeBottomContainer extends Component {
     super(props);
     this.state = {
       search: '',
-      courses: []
+      courses: [],
+      addButton: false
     }
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -33,11 +36,20 @@ class HomeBottomContainer extends Component {
       });
   }
 
+  handleClick(id) {
+    this.setState({ addButton: !this.state.addButton })
+  }
+
   handleSearchChange(event) {
     this.setState({search: event.target.value})
   }
 
   render() {
+
+    let showContent;
+    if(this.state.addButton == true) {
+      showContent = <CourseFormContainer />
+    }
 
     let courses;
     if (this.state.search !== '') {
@@ -78,8 +90,11 @@ class HomeBottomContainer extends Component {
         </div>
 
         <div className="course-section">
+          <div className="dtheadline" onClick={this.handleClick}>
+            Add a course
+          </div>
           <div>
-            Add a park
+            {showContent}
           </div>
           <div className="courses-list">
             {courses}

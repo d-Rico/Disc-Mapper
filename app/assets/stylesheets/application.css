@@ -9,16 +9,131 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- */
 
-/*general styling*/
+*/
+
 body {
-  margin: 0;
-  background-color: rgb(230, 230, 235);
+  text-align: center;
+  color: black;
+  background-color: #158DB8;
+  background-size: cover;
 }
+
+.large-12.columns {
+  text-align: left;
+}
+
+/*.top-bar.right.div.div {
+  display: inline-block;
+}*/
+
+.course-section {
+  padding: 0em;
+}
+
+.courses-list {
+  padding: 0em;
+}
+
+.home-bottom {
+  margin-left: 8em;
+  margin-right: 8em;
+}
+
+.column, .columns {
+  padding: 0rem;
+}
+
+.top-bar {
+  background-color: rgb(255, 235, 200);
+}
+
+
+.container {
+  background-color: rgb(10, 50, 90);
+}
+
+.reviews-border-box {
+  border-bottom: 1px;
+}
+
+.small-12.medium-12.large-12.columns {
+  padding: 0px;
+}
+
+.translucent-form-overlay {
+  height: 10em;
+  position: relative;
+  text-align: center;
+  background-color: #FFEBCA;
+  margin: auto;
+  padding: 50px, 20px;
+  color: #158DB8;
+  font-weight: bold;
+
+}
+
+.dtdiv {
+  padding: 0px 40px;
+}
+
+.dtheadline {
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #FFEBCA;
+  font-weight: bold;
+  color: #158DB8;
+}
+
+.pairup-or-review {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /*padding: 30px;*/
+  width: 500px;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: rgb(20, 30, 30);
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
+
+table thead th,
+table thead td,
+table tfoot th,
+table tfoot td {
+  text-align: center;
+}
+/*general styling*/
+/*body {
+  margin: 0;
+  background-color: rgb(230, 230, 235);*/
+  /*background-color: #0B545B;*/
+
+/*}
 
 .top-bar {
   padding-top: 10px;
@@ -52,10 +167,10 @@ body {
   background-color: rgb(255, 200, 200);
   background-size: cover;
   background-repeat: no-repeat;
-}
+}*/
 
 /*These are on the home bottom container, listing the courses*/
-.course-section {
+/*.course-section {
   text-align: center;
 }
 
@@ -63,7 +178,7 @@ body {
   margin: auto;
   overflow: scroll;
   height: 400px;
-  width: 450px;
+  width: 600px;
   background-color: rgb(230, 230, 235);
 }
 
@@ -75,8 +190,8 @@ body {
 .thumbnail {
   display: table-cell;
   border: 0px;
-  height: 60px;
-  width: 60px;
+  height: 200px;
+  width: 200px;
 }
 
 .thumbnail-name {
@@ -87,8 +202,20 @@ body {
 
 }
 
+.searchbar {
+
+}*/
+
+/*This is for the course show page*/
+/*.course-show-page {
+  background-color: rgb(200, 220, 200);
+}*/
+
+
+
+
 /*This is for the user sign up form*/
-.field-list {
+/*.field-list {
 
 }
 
@@ -96,4 +223,108 @@ body {
   text-align: center;
   width: 100px;
   display: table-cell;
+}*/
+
+
+/*about me!*/
+/*.about {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #0B545B;
+  color: #CDEDD9
+}
+
+.about h1 {
+  font-size: 100px;
+}
+
+.about p {
+  font-size: 25px;
+}*/
+
+.marketing-site-footer {
+  background: #2c3840;
+  color: #8aa0ae;
+  padding: 2rem 0 0;
+}
+
+.marketing-site-footer .marketing-site-footer-menu-social a {
+  color: #fefefe;
+}
+
+.marketing-site-footer .column-block {
+  margin-bottom: 30px;
+}
+
+.marketing-site-footer > .row {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .marketing-site-footer .columns {
+    margin-bottom: 2rem;
+  }
+}
+
+.marketing-site-footer-name {
+  color: #fefefe;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.marketing-site-footer-title {
+  color: #fefefe;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.marketing-site-footer-block {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.marketing-site-footer-block .fa {
+  font-size: 2rem;
+  color: #020304;
+}
+
+.marketing-site-footer-block p {
+  margin-left: 1rem;
+  line-height: 1.125rem;
+}
+
+.marketing-site-footer-bottom {
+  background: #020304;
+  padding: 1rem 0;
+}
+
+.marketing-site-footer-bottom p,
+.marketing-site-footer-bottom .menu {
+  margin-bottom: 0;
+}
+
+.marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
+  color: #8aa0ae;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 63.9375em) {
+  .marketing-site-footer-bottom {
+    text-align: center;
+  }
 }

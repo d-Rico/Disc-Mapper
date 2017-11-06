@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
-  belongs_to :park
+  belongs_to :user
+  belongs_to :course
   has_many :attendees
   has_many :users, through: :attendees
 

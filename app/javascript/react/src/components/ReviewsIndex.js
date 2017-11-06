@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-// import CourseTile from './CourseTile'
 
 class ReviewsIndex extends Component {
   constructor(props) {

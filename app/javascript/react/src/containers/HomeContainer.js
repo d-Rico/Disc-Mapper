@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import HomeTopContainer from './HomeTopContainer'
 import HomeBottomContainer from './HomeBottomContainer'
 
 // The Main component renders one of the three provided
@@ -19,7 +18,6 @@ class HomeContainer extends Component {
   render() {
     return(
       <div className="home-container">
-        <HomeTopContainer />
         <HomeBottomContainer />
       </div>
     )
