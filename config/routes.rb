@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :courses
       # resources :reviews, only: [:index, :show, :create]
-      # resources :users
+      resources :events
     end
   end
 
   root 'courses#index'
-
+  get "*path", to: "courses#index"
 end
