@@ -4,10 +4,12 @@ class User < ApplicationRecord
   has_many :events
   has_many :attendees
   has_many :events, through: :attendees
+  has_many :messages
+  has_many :chatrooms, through: :messages
 
   validates_presence_of :first_name
   validates_presence_of :last_name
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :play_level, inclusion: { in: ["Casual", "Novice", "Experienced", "Professional"], message: "must be selected" }
   # mount_uploader :profile_photo, ProfilePhotoUploader
   # Include default devise modules. Others available are:

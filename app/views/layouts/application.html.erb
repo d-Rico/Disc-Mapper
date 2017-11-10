@@ -3,6 +3,7 @@
   <head>
     <title>Disc Mapper</title>
     <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -10,33 +11,29 @@
   </head>
 
   <body>
-    <div class="top-bar" data-topbar role="navigation">
+    <div class="the-top" data-topbar role="navigation">
 
-      <div class="top-bar left">
-        <ul class="top-ul">
+      <div class="small-6 medium-6 large-6 columns the-top-left">
           <strong>
             <%= link_to 'Disc Mapper', root_path %>
           </strong>
-        </ul>
       </div>
-      <div class="top-bar right">
-        <div class="row">
+      <!-- <div class="small-3 medium-3 large-3 columns the-top-middle">
+        <%= link_to 'THE CHATROOM', root_path %>
+      </div> -->
+      <div class="small-6 medium-6 large-6 columns the-top-right">
           <% if user_signed_in? %>
-            <ul class="small-4 large-4 columns"><%= link_to 'Update Account', edit_user_registration_path, method: :get %></ul>
-            <ul class="small-4 large-4 columns"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
-            <% if current_user.admin? %>
-              <ul class="small-4 large-4 columns"><%= link_to "Admin Section", admin_path %></ul>
-            <% end %>
+            <div class="small-9 medium-9 large-9 columns signed-in"><%= link_to 'Update Account', edit_user_registration_path, method: :get %></div>
+            <div class="small-3 medium-3 large-3 columns signed-in"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></div>
           <% else %>
-            <ul class="top-ul"><%= link_to 'Sign In', new_user_session_path %></ul>
-            <ul class="top-ul"><%= link_to 'Sign Up', new_user_registration_path %></ul>
+            <div class="small-9 medium-9 large-9 columns else"><%= link_to 'Sign In', new_user_session_path %></div>
+            <div class="small-3 medium-3 large-3 columns else"><%= link_to 'Sign Up', new_user_registration_path %></div>
           <% end %>
-        </div>
       </div>
 
     </div>
-
-    <%= yield %>
-
+    <div class="app">
+      <%= yield %>
+    </div>
   </body>
 </html>

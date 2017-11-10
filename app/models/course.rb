@@ -11,6 +11,10 @@ class Course < ApplicationRecord
   validates :description, presence: true
   validates :difficulty, presence: true
   validates :photo_url, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
+
+
 
   def self.search(search)
     where("name ILIKE ? OR address ILIKE ? OR city ILIKE ? OR state ILIKE ? OR zip ILIKE ? OR category ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%, %#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
