@@ -3,20 +3,18 @@ import { Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import PairUpFormContainer from './PairUpFormContainer';
 import ReviewsIndex from '../components/ReviewsIndex';
+/* global google */
 
 class CourseShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pClicked: true,
-      rClicked: false,
       course: {},
       events: [],
       reviews: []
     }
-    this.handlePairUpsClick = this.handlePairUpsClick.bind(this)
-    this.handleReviewsClick = this.handleReviewsClick.bind(this)
     this.handleEventSubmit = this.handleEventSubmit.bind(this)
+    this.initMap = this.initMap.bind(this)
   }
 
   handleEventSubmit(formPayload) {
@@ -28,7 +26,8 @@ class CourseShowContainer extends Component {
     })
       .then((response) => response.json())
       .then(json => {
-        let newEventsArray = this.state.events.concat(json.event)
+        debugger;
+        let newEventsArray = this.state.events.concat(json)
         this.setState({ events: newEventsArray })
       })
   }
@@ -40,81 +39,75 @@ class CourseShowContainer extends Component {
         headers: { 'Content-Type': 'application/json' },
         credentials: 'same-origin'
       })
-        .then(response => response.json())
-        .then(json => {
-          this.setState({ course: json })
-
-        });
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ course: json })
+      });
+      window.initMap = this.initMap;
+      loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyAkkge_ZZgBAKUlmylUvZ7C798ocPW2u4o&callback=initMap')
     }
 
-  handlePairUpsClick(id) {
-    if(this.state.pClicked == false) {
-      this.setState({
-        pClicked: !this.state.pClicked,
-        rClicked: !this.state.rClicked
-      })
-    }
+  initMap() {
+    let map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: {lat: this.state.course.latitude, lng: this.state.course.longitude}
+    });
+    let marker = new google.maps.Marker({
+      position: {lat: this.state.course.latitude, lng: this.state.course.longitude},
+      map: map,
+    });
   }
-
-  handleReviewsClick(id) {
-    if(this.state.rClicked == false) {
-      this.setState({
-        rClicked: !this.state.rClicked,
-        pClicked: !this.state.pClicked
-      })
-    }
-  }
-
 
 
 
   render() {
 
-    // let handleEventSubmit = (formPayload) => {
-    //   this.handleEventSubmit(formPayload)
-    // }
-
-    let showContent;
-    if(this.state.pClicked == true && this.state.rClicked == false) {
-      showContent = <PairUpFormContainer handleEventSubmit={this.handleEventSubmit} events={this.state.events} course={this.state.course} />
-    } else if (this.state.rClicked == true && this.state.pClicked == false) {
-      showContent = <ReviewsIndex  />
+    let course = this.state.course
+    let hazard
+    if( course.water_hazard === true ) {
+      hazard = "Yes"
+    } else {
+      hazard = "No"
     }
 
 
     return(
       <div className="course-show-page-container">
-        <div className="show-page-cover">
-          <div>
-            <Link to={'/'}>Return Home</Link>
-          </div>
-          <div className="course-show-page">
-
-            This is where all of the course stuff goes
-
-
-          </div>
-          <div className="pairup-or-review">
-            <div className="row">
-              <div className="small-6 medium-6 large-6 columns" onClick={this.handlePairUpsClick}>
-                <div className="dtheadline">
-                  Pair-Up Form
-                </div>
-              </div>
-              <div className="small-6 medium-6 large-6 columns" onClick={this.handleReviewsClick}>
-                <div className="dtheadline">
-                  Course Reviews
-                </div>
-              </div>
+          <Link className="small-2 medium-2 large-2 columns home-link" to={'/'}>
+            Return Home
+          </Link>
+          <div className="small-12 medium-12 large-12 columns details">
+            <div className="small-12 medium-12 large-4 columns course-show-details">
+              <h3>{course.name}</h3>
+              <li>Address: {course.address}, {course.city}, {course.state} {course.zip}</li>
+              <li>Difficulty: {course.difficulty}</li>
+              <li>Water Hazard: {hazard}</li>
             </div>
-            <div className="row">
-              <div className="small-12 medium-12 large-12 columns">{showContent}</div>
+            <div className="small-12 medium-12 large-4 columns">
+            <h3>Course Description</h3>
+            <p>{course.description}</p>
+            </div>
+            <div className="small-12 medium-12 large-4 columns google-map" id="map">
+
+            </div>
+            <div className="small-12 medium-12 large-12 columns course-show-photo">
+              <img src={course.photo_url} />
             </div>
           </div>
-        </div>
+          <div className="bottom-section">
+            <PairUpFormContainer handleEventSubmit={this.handleEventSubmit} events={this.state.events} course={this.state.course} />
+          </div>
       </div>
     )
   }
 }
 
 export default CourseShowContainer
+
+function loadJS(src) {
+    var ref = window.document.getElementsByTagName("script")[0];
+    var script = window.document.createElement("script");
+    script.src = src;
+    script.async = true;
+    ref.parentNode.insertBefore(script, ref);
+}

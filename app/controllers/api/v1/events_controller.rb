@@ -16,7 +16,8 @@ class Api::V1::EventsController < ApplicationController
       else
         render json: { error: event.errors.full_messages }, status: :unprocessable_entity
       end
-    elsif matching_events.first.users.length < 2
+    elsif matching_events.first.users.length < 4 && matching_events.first.users.exclude?(current_user)
+      binding.pry
       event = matching_events.first
       attendee = Attendee.new(user: current_user, event: event)
       if attendee.save

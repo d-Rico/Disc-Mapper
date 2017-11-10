@@ -1,23 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CourseTile = props => {
-  return(
 
-    <div className="row">
-      <div className="small-6 large-6 columns" >
-        <Link to={`/courses/${props.course.id}`}>
-          <img className="thumbnail" src={props.course.photo_url}/>
-        </Link>
+const CourseTile = props => {
+
+  let course = props.course;
+  let newString = course.name.replace(/ /g, '+');
+  let state = `+${course.state}+${course.city}`
+  let location = newString.concat(state)
+
+  return(
+    <div className="courseTile">
+      <Link to={`/courses/${course.id}`}>
+        <div className="picture" >
+            <img className="thumbnail" src={course.photo_url}/>
+        </div>
+      </Link>
+      <div className="non-picture">
+        <p className="course-tile-name">{course.name}</p>
+        <p className="course-tile-address">{course.city}, {course.state}</p>
       </div>
-      <div className="small-6 large-6 columns">
-          <div className="small-12 large-12 columns">
-            <p>{props.course.name}</p>
-            <p>{props.course.city}, {props.course.state}</p>
-          </div>
-          <div className="small-12 large-12 columns">
+      <div className="directions" >
+          <a href={`https://www.google.com/maps/place/${location}`} target="_blank">
             Get Directions
-          </div>
+          </a>
       </div>
     </div>
   )

@@ -15,87 +15,24 @@
 
 */
 
+
+
 body {
-  text-align: center;
-  color: black;
-  background-color: #158DB8;
+  background: url(disc_golf_img_1.jpg) black no-repeat fixed;
   background-size: cover;
+
 }
 
-.large-12.columns {
-  text-align: left;
+p {
+  margin: 0px;
 }
-
-/*.top-bar.right.div.div {
-  display: inline-block;
-}*/
-
-.course-section {
-  padding: 0em;
-}
-
-.courses-list {
-  padding: 0em;
-}
-
-.home-bottom {
-  margin-left: 8em;
-  margin-right: 8em;
-}
-
-.column, .columns {
-  padding: 0rem;
-}
-
-.top-bar {
-  background-color: rgb(255, 235, 200);
-}
-
 
 .container {
   background-color: rgb(10, 50, 90);
 }
 
-.reviews-border-box {
-  border-bottom: 1px;
-}
 
-.small-12.medium-12.large-12.columns {
-  padding: 0px;
-}
-
-.translucent-form-overlay {
-  height: 10em;
-  position: relative;
-  text-align: center;
-  background-color: #FFEBCA;
-  margin: auto;
-  padding: 50px, 20px;
-  color: #158DB8;
-  font-weight: bold;
-
-}
-
-.dtdiv {
-  padding: 0px 40px;
-}
-
-.dtheadline {
-  height: 50px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #FFEBCA;
-  font-weight: bold;
-  color: #158DB8;
-}
-
-.pairup-or-review {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  /*padding: 30px;*/
-  width: 500px;
-}
+/*form on course show page*/
 
 .translucent-form-overlay .columns.row {
   display: block;
@@ -127,120 +64,9 @@ table tfoot th,
 table tfoot td {
   text-align: center;
 }
-/*general styling*/
-/*body {
-  margin: 0;
-  background-color: rgb(230, 230, 235);*/
-  /*background-color: #0B545B;*/
-
-/*}
-
-.top-bar {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.top-ul {
-  display: table-cell;
-  margin: 0;
-}
-
-.home-top {
-  background-color: rgb(60, 170, 170);
-  padding: 16px;
-}
-
-.home-top-ul {
-  font-size: 20px;
-  display: table-cell;
-  margin: 0;
-  width: 160px;
-  text-align: center;
-}
-
-.home-bottom {
-  text-align: center;
-  color: rgb(60, 200, 230);
-  font-weight: bold;
-  min-height: 800px;
-  background-image: url('disc2.jpg');
-  background-color: rgb(255, 200, 200);
-  background-size: cover;
-  background-repeat: no-repeat;
-}*/
-
-/*These are on the home bottom container, listing the courses*/
-/*.course-section {
-  text-align: center;
-}
-
-.courses-list {
-  margin: auto;
-  overflow: scroll;
-  height: 400px;
-  width: 600px;
-  background-color: rgb(230, 230, 235);
-}
-
-.course-tile-ul {
-  display: table-cell;
-  margin: 0;
-}
-
-.thumbnail {
-  display: table-cell;
-  border: 0px;
-  height: 200px;
-  width: 200px;
-}
-
-.thumbnail-name {
-  display: table-cell;
-}
-
-.thumbnail-address {
-
-}
-
-.searchbar {
-
-}*/
-
-/*This is for the course show page*/
-/*.course-show-page {
-  background-color: rgb(200, 220, 200);
-}*/
 
 
-
-
-/*This is for the user sign up form*/
-/*.field-list {
-
-}
-
-.play-radio {
-  text-align: center;
-  width: 100px;
-  display: table-cell;
-}*/
-
-
-/*about me!*/
-/*.about {
-  text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #0B545B;
-  color: #CDEDD9
-}
-
-.about h1 {
-  font-size: 100px;
-}
-
-.about p {
-  font-size: 25px;
-}*/
+/*React DateTime*/
 
 .marketing-site-footer {
   background: #2c3840;
@@ -327,4 +153,280 @@ table tfoot td {
   .marketing-site-footer-bottom {
     text-align: center;
   }
+}
+
+/*back to foundation*/
+
+/*top nav bar*/
+.the-top {
+  background-color: rgb(255, 235, 200);
+  padding: 8px 0px;
+  height: 40px;
+}
+
+.the-top-left {
+  background-color: rgb(255, 235, 200);
+  padding: 0px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.the-top-right {
+  background-color: rgb(255, 235, 200);
+  padding: 0px;
+  text-align: right;
+}
+
+.signed-in {
+  padding: 0px;
+  padding-right: 5px;
+}
+
+/*new user*/
+.new-user {
+  background-color: rgb(255, 235, 200)
+}
+
+.second-level {
+  padding: 10px;
+}
+
+.radio-buttons {
+
+}
+
+
+/*edit user*/
+.edit-user {
+  background-color: rgb(255, 235, 200)
+  padding: 10px;
+}
+
+
+
+
+/*home page*/
+
+.home-bottom {
+}
+
+.app {
+  margin: 0 30px;
+}
+
+.chat-button {
+  min-width: 100px;
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  border-radius: 10px;
+  padding: 10px 0px;
+  margin-top: 10px;
+  text-align: center;
+  max-height: 50px;
+  display: inline-block;
+}
+
+.chat-link {
+
+}
+
+.searchbar {
+  padding: 0px 40px;
+  margin: 20px 0px 10px 0px;
+}
+
+.course-section {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.courseTile {
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  border-radius: 10px;
+  max-width: 420px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  align-content: center;
+}
+
+.picture {
+  padding: 0px;
+  max-width: 400px;
+  max-height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+img {
+  size: cover;
+}
+
+.non-picture {
+  padding: 0px;
+}
+
+.course-tile-name {
+  font-size: 30px;
+}
+
+.course-tile-address {
+  font-size: 20px;
+}
+
+.google-map {
+
+}
+
+#map {
+  width: 300px;
+  height: 300px;
+  background-color: grey;
+}
+
+
+
+/*course show page*/
+
+.home-link {
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  border-radius: 10px;
+  padding: 10px 0px;
+  margin: 10px 0px;
+  text-align: center;
+  width: 120px;
+}
+
+.details {
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  margin: 0px 0px;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.course-show-details {
+  padding-left: 10px;
+}
+
+.title-map {
+  padding: 0px;
+}
+
+.google-map {
+  padding: 0px;
+}
+
+.course-show-photo {
+  padding: 0px;
+  margin-top: 10px;
+}
+
+
+.bottom-section {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 800px;
+  display: table;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+
+.pairup-below-button {
+  padding: 0px;
+  color: black;
+
+}
+
+.events {
+  padding: 0px;
+  margin: 0 90px;
+  margin-top: 8px;
+  color: black;
+}
+
+.events-1 {
+  text-align: center;
+}
+
+.translucent-form-overlay {
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  color: #575757;
+}
+
+.search-button {
+  box-shadow: 3px 3px 3px #888888;
+  border-radius: 2px;
+}
+
+.pairup-headline {
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  border-radius: 10px;
+  padding: 0px;
+  margin: 0px auto;
+  width: 300px;
+  font-weight: bold;
+  color: #575757;
+  text-align: center;
+}
+
+.pairup-tile {
+  background-color: rgba(255, 235, 200, 1.00);
+  box-shadow: 0px 0px 10px #888888;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  margin-bottom: 10;
+  margin-left: 0;
+  color: #575757;
+}
+
+.headliner {
+  background-color: rgba(255, 235, 200, 1.00);
+  border-radius: 10px;
+  padding: 0px;
+  font-weight: bold;
+  color: #158DB8;
+}
+
+.dtdiv {
+  padding: 0px 40px;
+}
+
+/*chat room*/
+.callout-chat {
+  min-height: 300px;
+  background-color: #e1e1e1;
+  border: 2px solid #888888;
+  margin: 40px 30px 0px 30px;
+  padding: 20px;
+}
+
+.text-box {
+  background-color: #white;
+  border: 2px solid #888888;
+  margin: 0px 30px 0px 30px;
+  border-top: 0px;
+}
+
+input.input-group-field {
+  margin: 0px;
+}
+
+div.input-group-button {
+  margin: 0px 30px;
 }
